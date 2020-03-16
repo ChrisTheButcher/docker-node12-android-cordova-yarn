@@ -1,4 +1,5 @@
-# Source code of `https://hub.docker.com/repository/docker/chriswijnia/dev`
+# Docker Node 12, Android, Cordova, yarn
+Source code of `https://hub.docker.com/repository/docker/chriswijnia/dev`
 
 #### This serves as a base for Cordova projects
 An example Dockerfile that uses this as a base could look something like this:
