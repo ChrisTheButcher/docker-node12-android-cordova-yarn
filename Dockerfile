@@ -104,15 +104,19 @@ RUN yarn global add cordova@latest && \
 ##
 ## Install fastlane
 ##
-RUN gem install fastlane && \
-  gem install bundler:1.17.2
+RUN gem install fastlane bundler
+
+# NVM
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 
 # Install Git (to yarn install git repo)
 RUN apt-get update && \
-  yes | apt-get install git
+  yes | apt-get install git zipalign libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb vim
 
-# Install zipalign (to sign certificates)
-RUN yes | apt-get install zipalign
+# firebase 
+RUN yarn global add firebase-tools
+# vue
+RUN yarn global add @vue/cli
 
 # Run this from container
 # --------------------------
