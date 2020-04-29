@@ -1,11 +1,12 @@
 {
   "name": "docker-node12-android-cordova-yarn",
   "description": "Docker Node 12, Android, Cordova, yarn, nvm, vue-cli. Base image for Cordova projects with Android",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "scripts": {
     "build": "docker image build -t chriswijnia/dev .",
     "start": "docker run -it --entrypoint bash chriswijnia/dev",
-    "deploy": "docker push chriswijnia/dev"
+    "deploy": "docker push chriswijnia/dev",
+    "docker-prune": "docker system prune -a --volumes"
   },
   "main": "index.js",
   "repository": "https://github.com/ChrisTheButcher/docker-node12-android-cordova-yarn.git",

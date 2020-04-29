@@ -8,7 +8,7 @@ ENV DEPLOY_ENV production
 
 # Generic build dependencies
 RUN apt-get update && \
-  apt-get install -y --no-install-recommends wget curl apt-transport-https build-essential unzip rubygems ruby-dev git zipalign libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb vim && \
+  apt-get install -y --no-install-recommends lsof wget curl apt-transport-https build-essential unzip rubygems ruby-dev git zipalign libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb vim && \
   rm -rf /var/lib/apt/lists/*
 
 # Android SDK
@@ -38,7 +38,7 @@ SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 RUN nvm install $NODE_VERSION && nvm install 8 && nvm use $NODE_VERSION
 RUN npm install -g yarn
-RUN yarn global add firebase-tools @vue/cli ts-mocha ts-node mocha jest cordova@latest
+RUN yarn global add firebase-tools @vue/cli ts-mocha ts-node cypress@3.8.3 mocha jest cordova@latest
 RUN cordova telemetry off
 EXPOSE 5000-5050
 EXPOSE 8000-8090

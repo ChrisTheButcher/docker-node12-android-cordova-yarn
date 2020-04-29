@@ -30,7 +30,7 @@ npm manifest:
   {
     "name": "docker-node12-android-cordova-yarn",
     "description": "Docker Node 12, Android, Cordova, yarn, nvm, vue-cli. Base image for Cordova projects with Android",
-    "version": "1.1.0",
+    "version": "1.1.2",
     "scripts": {
       "build": "docker image build -t chriswijnia/dev .",
       "start": "docker run -it --entrypoint bash chriswijnia/dev",
