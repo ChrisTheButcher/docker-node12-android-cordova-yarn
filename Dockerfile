@@ -36,12 +36,19 @@ RUN gem install fastlane bundler
 # NVM Node
 SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
-RUN nvm install $NODE_VERSION && nvm install 8 && nvm use $NODE_VERSION
-RUN npm install -g yarn
+RUN nvm install $NODE_VERSION \
+  && nvm install 8 \
+  && npm install -g yarn \
+  && nvm use $NODE_VERSION \
+  && npm install -g yarn
 RUN yarn global add firebase-tools @vue/cli ts-mocha ts-node cypress@3.8.3 mocha jest cordova@latest
 RUN cordova telemetry off
 EXPOSE 5000-5050
 EXPOSE 8000-8090
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+ENTRYPOINT ["/bin/bash", "--login"]
 
 # Run this from container
 # --------------------------

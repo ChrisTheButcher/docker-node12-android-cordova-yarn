@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/chris/.nvm/versions/node/v12.16.2/bin/node /Users/chris/.yarn/bin/yarn.js publish
+  /Users/chris/.nvm/versions/node/v12.16.2/bin/node /Users/chris/.nvm/versions/node/v12.16.2/bin/yarn publish
 
 PATH: 
   /Users/chris/.nvm/versions/node/v12.16.2/bin:/Users/chris/Library/Android/sdk/emulator:/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Users/chris/.yarn/bin:/Users/chris/.config/yarn/global/node_modules/.bin:/usr/local/opt/ruby@2.5/bin:/Users/chris/Library/Android/sdk/tools:/Users/chris/Library/Android/sdk/platform-tools:/Applications/Android Studio.app/Contents/gradle/gradle-4.10.1/bin:/Users/chris/Library/Android/sdk/tools:/Users/chris/Library/Android/sdk/build-tools/28.0.2:/Users/chris/Library/Android/sdk/tools:/Users/chris/Library/Android/sdk/build-tools/28.0.3
@@ -15,7 +15,7 @@ Platform:
 
 Trace: 
   Error: canceled
-      at Interface.<anonymous> (/Users/chris/.yarn/lib/cli.js:137008:13)
+      at Interface.<anonymous> (/Users/chris/.nvm/versions/node/v12.16.2/lib/node_modules/yarn/lib/cli.js:137008:13)
       at Interface.emit (events.js:310:20)
       at Interface._ttyWrite (readline.js:893:16)
       at ReadStream.onkeypress (readline.js:198:10)
@@ -30,11 +30,12 @@ npm manifest:
   {
     "name": "docker-node12-android-cordova-yarn",
     "description": "Docker Node 12, Android, Cordova, yarn, nvm, vue-cli. Base image for Cordova projects with Android",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "scripts": {
       "build": "docker image build -t chriswijnia/dev .",
-      "start": "docker run -it --entrypoint bash chriswijnia/dev",
-      "deploy": "docker push chriswijnia/dev"
+      "start": "docker run -it chriswijnia/dev",
+      "deploy": "docker push chriswijnia/dev",
+      "docker-prune": "docker system prune -a --volumes"
     },
     "main": "index.js",
     "repository": "https://github.com/ChrisTheButcher/docker-node12-android-cordova-yarn.git",

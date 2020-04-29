@@ -1,8 +1,0 @@
-firebase-tools
-@vue/cli
-mocha
-est
-ts-mocha
-ts-node
-cordova@latest
-
