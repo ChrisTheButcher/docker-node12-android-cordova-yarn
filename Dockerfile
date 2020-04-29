@@ -48,7 +48,8 @@ EXPOSE 8000-8090
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-ENTRYPOINT ["/bin/bash", "--login"]
+RUN ./init.sh
+ENTRYPOINT ["/bin/bash", "./init.sh"]
 
 # Run this from container
 # --------------------------
