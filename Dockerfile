@@ -38,6 +38,7 @@ SHELL ["/bin/bash", "--login", "-c"]
 RUN curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 RUN nvm install $NODE_VERSION \
   && nvm install 8 \
+  && nvm install 10 \
   && npm install -g yarn \
   && nvm use $NODE_VERSION \
   && npm install -g yarn

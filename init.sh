@@ -1,5 +1,3 @@
-source ~/.bashrc
-
 VERS=$(cat package.json \
   | grep version \
   | head -1 \
@@ -25,3 +23,5 @@ echo '>>    Starting Container in Bash...    <<'
 echo '========================================='
 echo ''
 echo ''
+
+bash --rcfile $HOME/.bashrc
