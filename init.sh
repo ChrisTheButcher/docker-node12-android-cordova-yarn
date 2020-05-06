@@ -1,3 +1,5 @@
+. $HOME/.bashrc
+
 VERS=$(cat package.json \
   | grep version \
   | head -1 \
@@ -24,4 +26,4 @@ echo '========================================='
 echo ''
 echo ''
 
-bash --rcfile $HOME/.bashrc
+bash --rcfile $HOME/.bashrc 
