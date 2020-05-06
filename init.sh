@@ -1,5 +1,7 @@
 . $HOME/.bashrc
 
+nvm use 12
+
 VERS=$(cat package.json \
   | grep version \
   | head -1 \

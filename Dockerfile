@@ -1,7 +1,5 @@
 FROM openjdk:8-jdk-slim
 
-LABEL name="Chris Wijnia"
-
 ENV LANG en_US.UTF-8
 ENV NODE_VERSION 12.16.1  
 ENV DEPLOY_ENV production
@@ -47,9 +45,10 @@ RUN cordova telemetry off
 EXPOSE 5000-5050
 EXPOSE 8000-8090
 
+RUN echo "Copying workdir..."
 COPY . /usr/src/app
 WORKDIR /usr/src/app
-ENTRYPOINT ["/bin/bash", "./init.sh"]
+ENTRYPOINT ["/bin/bash", "init.sh"]
 
 # Run this from container
 # --------------------------
