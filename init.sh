@@ -32,4 +32,4 @@ echo '========================================='
 echo ''
 echo ''
 
-# bash --rcfile $HOME/.bashrc 
+bash --rcfile $HOME/.bashrc 
