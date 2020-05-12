@@ -40,7 +40,8 @@ RUN nvm install $NODE_VERSION \
   && npm install -g yarn \
   && nvm use $NODE_VERSION \
   && npm install -g yarn
-RUN yarn global add firebase-tools @vue/cli ts-mocha ts-node cypress@3.8.3 mocha jest cordova@latest
+RUN yarn global add firebase-tools @vue/cli ts-mocha ts-node cypress@4.5.0 mocha jest cordova@latest
+RUN cypress install
 RUN cordova telemetry off
 EXPOSE 5000-5050
 EXPOSE 8000-8090
